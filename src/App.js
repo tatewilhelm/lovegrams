@@ -134,7 +134,7 @@ function App() {
 				<Page key={index} size="Letter" style={styles.page}>
 					<View style={styles.container}>
 						<Image
-							src="http://localhost:3000/background.png"
+							src="/background.png"
 							style={styles.backgroundImage}
 						/>
 						<View style={styles.content}>
