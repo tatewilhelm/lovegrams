@@ -282,7 +282,7 @@ function App() {
 	return (
 		<div className="App">
 			<h1>Love Grams Generator</h1>
-			<a target="_blank" href="https://github.com/tatewilhelm/lovegrams/blob/master/README.md">How do I use this?</a>
+			<a target="_blank" rel="noreferrer" href="https://github.com/tatewilhelm/lovegrams/blob/master/README.md">How do I use this?</a>
 			<p>Please upload a CSV file of the form results! <b>IT MUST BE A CSV FILE!</b></p>
 			<input type="file" accept=".csv" onChange={handleFileUpload} />
 
