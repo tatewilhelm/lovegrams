@@ -52,21 +52,22 @@ function App() {
 		// Check that name, gender, and grade question are inside the CSV file.
 		let proceed = true;
 		if (!Object.keys(csvData[0] || {}).includes(nameQuestion)) {
-			alert("The name question is not included in the CSV data uploaded!");
+			alert("The name question is not included in the CSV data uploaded! Check if there are any spaces in the text box.");
 			proceed = false;
 		}
 		if (!Object.keys(csvData[0] || {}).includes(genderQuestion)) {
-			alert("The gender question is not included in the CSV data uploaded!");
+			alert("The gender question is not included in the CSV data uploaded! Check if there are any spaces in the text box.");
 			proceed = false;
 		}
 		if (!Object.keys(csvData[0] || {}).includes(gradeQuestion)) {
-			alert("The grade question is not included in the CSV data uploaded!");
+			alert("The grade question is not included in the CSV data uploaded! Check if there are any spaces in the text box.");
 			proceed = false;
 		}
 		if (selectedQuestions.length === 0) {
 			alert("No questions are selected to compare for matches!");
 			proceed = false;
 		}
+
 
 		// Lets match everyone!
 		if (proceed) {
@@ -222,7 +223,6 @@ function App() {
 			))}
 		</Document>
 	);
-
 	const styles = StyleSheet.create({
 		page: {
 			width: "100%",
@@ -282,6 +282,8 @@ function App() {
 	return (
 		<div className="App">
 			<h1>Love Grams Generator</h1>
+			<a target="_blank" href="https://github.com/tatewilhelm/lovegrams/blob/master/README.md">How do I use this?</a>
+			<p>Please upload a CSV file of the form results! <b>IT MUST BE A CSV FILE!</b></p>
 			<input type="file" accept=".csv" onChange={handleFileUpload} />
 
 			<div className="question-inputs">
