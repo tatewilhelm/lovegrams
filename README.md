@@ -1,5 +1,5 @@
 # Love Grams Generator
-This website is a matchmaking program for use by schools or school related clubs. It is essentially a free, DIY version of (https://matchomatics.com/). (THEY OVERCHARGE, JUST DIY.)
+This website is a matchmaking program for use by schools or school related clubs. It is essentially a free, DIY version of (https://matchomatics.com/). 
 
 ## What are Love Grams?
 Love Grams is a fun and interactive way to bring people together by analyzing survey responses and calculating their best matches! It’s often used in schools, clubs, and social events to create personalized match reports based on shared interests, personality traits, or other criteria. It's an easy, fun and effective fundraiser. 
