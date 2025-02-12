@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import Papa from "papaparse";
 import {
 	Document,
@@ -12,14 +12,20 @@ import {
 import { BlobProvider } from "@react-pdf/renderer";
 
 function App() {
+
 	const [csvData, setCsvData] = useState([]);
 	const [selectedQuestions, setSelectedQuestions] = useState([]);
 	const [matches, setMatches] = useState([]);
+	
+	const [nameQuestion, setNameQuestion] = useState('');
+	const [genderQuestion, setGenderQuestion] = useState('');
+	const [gradeQuestion, setGradeQuestion] = useState('');
+	
+	// When a user updates any of the main questions, reset matches
+	useEffect(() => {
+	  setMatches([]);  // Clear matches when a key question changes
+	}, [nameQuestion, genderQuestion, gradeQuestion]);
 
-	// State variables for user inputs
-	const [nameQuestion, setNameQuestion] = useState("");
-	const [genderQuestion, setGenderQuestion] = useState("");
-	const [gradeQuestion, setGradeQuestion] = useState("");
 
 	const handleFileUpload = (event) => {
 		// Parse the CSV file into Papa Parse
@@ -55,6 +61,10 @@ function App() {
 		}
 		if (!Object.keys(csvData[0] || {}).includes(gradeQuestion)) {
 			alert("The grade question is not included in the CSV data uploaded!");
+			proceed = false;
+		}
+		if (selectedQuestions.length === 0) {
+			alert("No questions are selected to compare for matches!");
 			proceed = false;
 		}
 
