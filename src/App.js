@@ -134,7 +134,7 @@ function App() {
 				<Page key={index} size="Letter" style={styles.page}>
 					<View style={styles.container}>
 						<Image
-							src="/background.png"
+							src="https://lovegrams.pages.dev/background.png"
 							style={styles.backgroundImage}
 						/>
 						<View style={styles.content}>
