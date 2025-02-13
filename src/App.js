@@ -16,7 +16,8 @@ function App() {
 	const [csvData, setCsvData] = useState([]);
 	const [selectedQuestions, setSelectedQuestions] = useState([]);
 	const [matches, setMatches] = useState([]);
-	
+	const [isGenerated, setIsGenerated] = useState(false);
+
 	const [nameQuestion, setNameQuestion] = useState('');
 	const [genderQuestion, setGenderQuestion] = useState('');
 	const [gradeQuestion, setGradeQuestion] = useState('');
@@ -71,6 +72,8 @@ function App() {
 
 		// Lets match everyone!
 		if (proceed) {
+			setIsGenerated(true);
+
 			// Sort the data alphabetically.
 			const sortedData = [...csvData].sort((a, b) => {
 				const nameA = a[nameQuestion]?.toLowerCase() || "";
@@ -331,6 +334,7 @@ function App() {
 			</button>
 
 			<div className="pdf-links">
+				{isGenerated && (
 				<BlobProvider document={<PDFDocument />}>
 					{({ url, loading, error }) => {
 						if (loading) return "Generating PDF...";
@@ -342,6 +346,7 @@ function App() {
 						);
 					}}
 				</BlobProvider>
+				)}
 			</div>
 		</div>
 	);
